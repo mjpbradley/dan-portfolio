@@ -85,7 +85,7 @@ export function Gallery({ images }: GalleryProps) {
         setIndex((currentIndex) => nextIndex(currentIndex, 1, count));
         setHasMoved(true);
       }}
-      className="cursor-custom border-0 bg-transparent p-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+      className="gallery-advance cursor-custom"
       aria-label={`Portfolio page ${index + 1} of ${count}. Show next page.`}
     >
       <Image

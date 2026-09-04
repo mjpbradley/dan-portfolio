@@ -38,6 +38,20 @@ a:hover {
   cursor: url("/cursor32.png") 12 2, pointer;
 }
 
+.gallery-advance {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  outline: none;
+}
+
+.gallery-advance:focus,
+.gallery-advance:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
 .gallery-frame {
   display: block;
   width: min(88vw, 60vh);
