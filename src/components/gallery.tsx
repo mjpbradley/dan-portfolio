@@ -94,7 +94,7 @@ export function Gallery({ images }: GalleryProps) {
         width={current.width}
         height={current.height}
         sizes="(max-width: 640px) 88vw, 60vw"
-        quality={90}
+        quality={100}
         priority={index === 0}
         placeholder={current.blurDataURL ? "blur" : "empty"}
         blurDataURL={current.blurDataURL}
