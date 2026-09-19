@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { JsonLd } from "@/components/json-ld";
 import { site } from "@/content/site";
 import { jsonLdGraph } from "@/lib/discovery";
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full bg-background text-foreground">
         <JsonLd data={jsonLdGraph()} />
         {children}
+        <Analytics />
       </body>
     </html>
   );
