@@ -1,13 +1,7 @@
 import { galleryImages } from "@/content/gallery-images";
+import { resolveSiteUrl } from "@/lib/site-url";
 
 export type { GalleryImage } from "@/content/gallery-images";
-
-const fallbackSiteUrl = "http://localhost:3000";
-
-function resolveSiteUrl(): string {
-  const raw = process.env.NEXT_PUBLIC_SITE_URL ?? fallbackSiteUrl;
-  return raw.replace(/\/$/, "");
-}
 
 export const site = {
   title: "Stay A While.",

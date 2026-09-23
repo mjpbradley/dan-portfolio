@@ -1,10 +1,8 @@
 import type { NextConfig } from "next";
 import { discoveryLinkHeader } from "./src/lib/discovery-links";
+import { resolveSiteUrl } from "./src/lib/site-url";
 
-const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(
-  /\/$/,
-  "",
-);
+const siteUrl = resolveSiteUrl();
 
 function linkHeader(canonicalUrl: string): string {
   return `${discoveryLinkHeader}, <${canonicalUrl}>; rel="canonical"`;
