@@ -34,9 +34,15 @@ import page32 from "./gallery/32.png";
 import page33 from "./gallery/33.png";
 import page34 from "./gallery/34.png";
 import page35 from "./gallery/35.png";
+import mcl1 from "./gallery/mcl1.png";
+import mcl2 from "./gallery/mcl2.png";
+import mcl3 from "./gallery/mcl3.png";
+import mcl4 from "./gallery/mcl4.png";
+import mcl5 from "./gallery/mcl5.png";
 import page36 from "./gallery/36.png";
 import page37 from "./gallery/37.png";
 import page38 from "./gallery/38.png";
+import page39 from "./gallery/39.png";
 
 export type GalleryImage = {
   src: string;
@@ -82,9 +88,15 @@ const frames: StaticImageData[] = [
   page33,
   page34,
   page35,
+  mcl1,
+  mcl2,
+  mcl3,
+  mcl4,
+  mcl5,
   page36,
   page37,
   page38,
+  page39,
 ];
 
 export const galleryImages: GalleryImage[] = frames.map((image, index) => ({

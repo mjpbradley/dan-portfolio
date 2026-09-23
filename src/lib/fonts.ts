@@ -1,11 +1,11 @@
-import { Gloock } from "next/font/google";
+import { Instrument_Serif } from "next/font/google";
 import localFont from "next/font/local";
 
-export const gloock = Gloock({
+export const instrumentSerif = Instrument_Serif({
   weight: "400",
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-gloock",
+  variable: "--font-instrument-serif",
 });
 
 export const basier = localFont({

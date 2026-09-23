@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { JsonLd } from "@/components/json-ld";
 import { site } from "@/content/site";
 import { jsonLdGraph } from "@/lib/discovery";
-import { basier, gloock } from "@/lib/fonts";
+import { basier, instrumentSerif } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -57,7 +57,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en-GB"
-      className={`${gloock.variable} ${basier.variable} h-full antialiased`}
+      className={`${instrumentSerif.variable} ${basier.variable} h-full antialiased`}
     >
       <head>
         <link rel="describedby" href="/llms.txt" type="text/plain" />

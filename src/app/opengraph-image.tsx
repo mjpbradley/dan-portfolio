@@ -21,7 +21,7 @@ export default function OpenGraphImage() {
           padding: 80,
         }}
       >
-        <div style={{ fontSize: 72, letterSpacing: "0.02em" }}>{site.name}</div>
+        <div style={{ fontSize: 72, letterSpacing: "-0.02em" }}>{site.name}</div>
         <div
           style={{
             marginTop: 24,
@@ -29,7 +29,7 @@ export default function OpenGraphImage() {
             letterSpacing: "0.06em",
           }}
         >
-          {`${site.jobTitle.toUpperCase()} · ${site.location.toUpperCase()}`}
+          {`${site.jobTitle} · ${site.location}`}
         </div>
       </div>
     ),

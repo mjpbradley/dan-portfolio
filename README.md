@@ -23,5 +23,5 @@ Set `NEXT_PUBLIC_SITE_URL` to the production origin before deploying. That value
 
 ## Content
 
-Edit `src/content/site.ts` for identity and links. Gallery images live in `src/content/gallery/` (1–38). Captions are numbered alts in `src/content/gallery-images.ts` until real titles are supplied.
+Edit `src/content/site.ts` for identity and links. Gallery images live in `src/content/gallery/` (1–35, MCL1–5, 36–39). Captions are numbered alts in `src/content/gallery-images.ts` until real titles are supplied.
 # dan-portfolio

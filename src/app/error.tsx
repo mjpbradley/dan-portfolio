@@ -8,7 +8,7 @@ type ErrorProps = {
 export default function Error({ reset }: ErrorProps) {
   return (
     <main className="flex min-h-dvh flex-col items-center justify-center gap-4 bg-background px-5 text-center">
-      <h1 className="font-display text-[clamp(28px,8vw,40px)] tracking-[0.02em]">
+      <h1 className="font-display text-[clamp(36px,10vw,52px)] tracking-[-0.02em]">
         Something went wrong
       </h1>
       <button

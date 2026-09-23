@@ -8,7 +8,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-display: var(--font-gloock);
+  --font-display: var(--font-instrument-serif);
   --font-mono: var(--font-basier);
 }
 
@@ -54,7 +54,7 @@ a:hover {
 
 .gallery-frame {
   display: block;
-  width: min(88vw, 60vh);
+  width: min(82vw, 56vh);
   height: auto;
 }
 

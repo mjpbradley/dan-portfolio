@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { GalleryImage } from "@/content/gallery-images";
+
+const stepCooldownMs = 250;
 
 type GalleryProps = {
   images: GalleryImage[];
@@ -37,8 +39,31 @@ function preload(src: string) {
 export function Gallery({ images }: GalleryProps) {
   const [index, setIndex] = useState(0);
   const [hasMoved, setHasMoved] = useState(false);
+  const lastStepAtRef = useRef(0);
   const count = images.length;
   const current = count > 0 ? imageAt(images, index) : undefined;
+
+  const step = useCallback(
+    (direction: 1 | -1) => {
+      if (count === 0) {
+        return;
+      }
+
+      if (direction === -1 && !hasMoved) {
+        return;
+      }
+
+      const now = Date.now();
+      if (now - lastStepAtRef.current < stepCooldownMs) {
+        return;
+      }
+
+      lastStepAtRef.current = now;
+      setIndex((currentIndex) => nextIndex(currentIndex, direction, count));
+      setHasMoved(true);
+    },
+    [count, hasMoved],
+  );
 
   useEffect(() => {
     if (count === 0) {
@@ -57,14 +82,13 @@ export function Gallery({ images }: GalleryProps) {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowRight") {
         event.preventDefault();
-        setIndex((currentIndex) => nextIndex(currentIndex, 1, count));
-        setHasMoved(true);
+        step(1);
         return;
       }
 
-      if (event.key === "ArrowLeft" && hasMoved) {
+      if (event.key === "ArrowLeft") {
         event.preventDefault();
-        setIndex((currentIndex) => nextIndex(currentIndex, -1, count));
+        step(-1);
       }
     };
 
@@ -72,7 +96,7 @@ export function Gallery({ images }: GalleryProps) {
     return () => {
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [count, hasMoved]);
+  }, [count, step]);
 
   if (!current) {
     return null;
@@ -82,8 +106,7 @@ export function Gallery({ images }: GalleryProps) {
     <button
       type="button"
       onClick={() => {
-        setIndex((currentIndex) => nextIndex(currentIndex, 1, count));
-        setHasMoved(true);
+        step(1);
       }}
       className="gallery-advance cursor-custom"
       aria-label={`Portfolio page ${index + 1} of ${count}. Show next page.`}
@@ -93,7 +116,7 @@ export function Gallery({ images }: GalleryProps) {
         alt={current.alt}
         width={current.width}
         height={current.height}
-        sizes="(max-width: 640px) 88vw, 60vw"
+        sizes="(max-width: 640px) 82vw, 60vw"
         quality={100}
         priority={index === 0}
         placeholder={current.blurDataURL ? "blur" : "empty"}
