@@ -15,7 +15,7 @@ export const site = {
   jobTitle: "Creative Director",
   location: "London",
   description:
-    "Daniel Sherratt is a Creative Director in London. Stay A While is his single-page visual portfolio — forty-four designed work pages in a click-through gallery.",
+    "Daniel Sherratt is a Creative Director in London.",
   email: "sherratt@gmail.com",
   spotifyUrl:
     "https://open.spotify.com/playlist/2DGAsscm9jqRcD2Rxe33jp?si=5b67bc99bc374827",

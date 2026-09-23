@@ -330,9 +330,9 @@ export function jsonLdGraph(): Record<string, unknown> {
       {
         "@type": "ImageObject",
         "@id": imageId,
-        url: absoluteUrl("/opengraph-image"),
-        contentUrl: absoluteUrl("/opengraph-image"),
-        caption: `${site.name}, ${site.jobTitle}`,
+        url: absoluteUrl("/opengraph-image.jpg"),
+        contentUrl: absoluteUrl("/opengraph-image.jpg"),
+        caption: site.title,
       },
       {
         "@type": "WebPage",
