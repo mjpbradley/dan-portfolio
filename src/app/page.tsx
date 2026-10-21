@@ -10,12 +10,20 @@ export default function Home() {
           <h1 className="whitespace-nowrap font-display text-[clamp(36px,10vw,52px)] tracking-[-0.02em] min-[641px]:text-[clamp(34px,3.1vw,56px)]">
             {site.name}
           </h1>
-          <a
-            href={mailtoHref()}
-            className="cursor-custom text-xs tracking-[0.06em]"
-          >
-            CONTACT
-          </a>
+          <div className="flex items-center gap-4">
+            <a
+              href="/portfolio"
+              className="cursor-custom text-xs tracking-[0.06em]"
+            >
+              PORTFOLIO
+            </a>
+            <a
+              href={mailtoHref()}
+              className="cursor-custom text-xs tracking-[0.06em]"
+            >
+              CONTACT
+            </a>
+          </div>
         </div>
 
         <Gallery images={[...site.gallery]} />
