@@ -79,6 +79,16 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/portfolio",
+        destination:
+          "https://www.figma.com/deck/NesfIHR4my6N3EEzTcVTbH/Dan?node-id=87-205&t=iw3ZwcvF9MFWv8lC-1",
+        permanent: false,
+      },
+    ];
+  },
   async rewrites() {
     return [
       { source: "/AGENTS.md", destination: "/agents.md" },
