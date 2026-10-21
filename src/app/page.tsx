@@ -14,6 +14,7 @@ export default function Home() {
             <a
               href="/portfolio"
               className="cursor-custom text-xs tracking-[0.06em]"
+              target="_blank"
             >
               PORTFOLIO
             </a>
